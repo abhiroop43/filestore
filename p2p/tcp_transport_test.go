@@ -6,11 +6,10 @@ import (
 )
 
 func TestNewTCPTransport(t *testing.T) {
-	// Test if NewTCPTransport returns a pointer to a TCPTransport
 	listenAddr := ":4000"
 	transport := NewTCPTransport(listenAddr)
 	assert.Equal(t, transport.listenAddress, listenAddr)
+	assert.Nil(t, transport.ListenAndAccept())
 
-	// Server
-
+	select {}
 }

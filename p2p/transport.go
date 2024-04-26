@@ -5,6 +5,7 @@ type Peer interface {
 }
 
 // Transport is to handle communication
-// between nodes
+// between nodes, this can be TCP, UDP etc.
 type Transport interface {
+	ListenAndAccept() error
 }
